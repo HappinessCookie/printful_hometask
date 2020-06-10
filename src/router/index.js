@@ -1,5 +1,6 @@
 import Auth from '~/pages/Auth';
 import Quiz from '~/pages/Quiz';
+import Result from '~/pages/Result';
 
 import store from '~/store';
 
@@ -21,6 +22,13 @@ export default [
 		name: 'quiz',
 		path: '/quiz/:id',
 		component: Quiz,
+		props: true,
+		beforeEnter: requireAuth,
+	},
+	{
+		name: 'result',
+		path: '/result',
+		component: Result,
 		props: true,
 		beforeEnter: requireAuth,
 	},
