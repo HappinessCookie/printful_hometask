@@ -5,10 +5,10 @@
             height="48"
             type="heading"
         >
-            <h1>{{ question.title }}</h1>
+            <h1 class="text-center">{{ question.title }}</h1>
         </v-skeleton-loader>
 
-        <div class="answers">
+        <div class="answers mt-4">
             <template v-if="!loaded">
                 <v-skeleton-loader
                     v-for="i in 4"
