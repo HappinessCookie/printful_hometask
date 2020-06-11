@@ -20,6 +20,11 @@ export default {
       answers.forEach(answer => answer.questionId = questionId);
       commit('addQuestions', answers);
     },
+    async checkAnswers({ commit }, { quizId, answersId }) {
+      const answers = answersId.join('&answers[]=');
+      const response = await fetch(`https://printful.com/test-quiz.php?action=submit&quizId=${quizId}&answers[]=${answers}`);
+      return await response.json();
+    },
   },
   mutations: {
     addQuestions(state, payload) {
