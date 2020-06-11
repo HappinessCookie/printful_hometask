@@ -74,7 +74,7 @@
 				if (!this.answer) {
 					return false;
 				}
-				this.addAnswer(this.answer.id);
+				this.addAnswer(this.answer);
 				this.answer = null;
 				this.questionIndex += 1;
 			},
