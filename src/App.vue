@@ -2,29 +2,24 @@
 	<v-app>
 		<v-content>
 			<v-container class="fill-height" fluid>
-				<v-row
-					align="center"
-					justify="center"
-				>
-					<v-col
-						cols="12"
-						sm="8"
-						md="4"
-					>
-						<router-view></router-view>
-					</v-col>
-				</v-row>
+				<div class="app">
+					<router-view></router-view>
+				</div>
 			</v-container>
 		</v-content>
 	</v-app>
 </template>
 
 <script>
-  export default {
-    name: 'App',
-  };
+	export default {
+		name: 'App',
+	};
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+	.app {
+		margin: auto;
+		max-width: 800px;
+		width: 100%;
+	}
 </style>
