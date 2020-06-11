@@ -1,13 +1,20 @@
 <template>
-	<div>
-		<Question v-if="currentQuestion" v-model="answer" :quizId="id" :id="currentQuestion.id"></Question>
-		<v-progress-linear
-			color="light-blue"
-			height="10"
-			striped
-			:value="progress"
-		></v-progress-linear>
-		<v-btn class="mt-4" @click="next">Next</v-btn>
+	<div class="quiz">
+		<div v-if="currentQuestion" class="quiz__question">
+			<Question v-model="answer" :quizId="id" :id="currentQuestion.id"></Question>
+		</div>
+		<div class="quiz__progress">
+			<v-progress-linear
+				class="mt-4"
+				color="light-blue"
+				height="10"
+				striped
+				:value="progress"
+			></v-progress-linear>
+		</div>
+		<div class="quiz__action">
+			<v-btn class="mt-4" @click="next">Next</v-btn>
+		</div>
 	</div>
 </template>
 
@@ -82,6 +89,17 @@
 	};
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+	.quiz {
+		&__progress {
+			display: grid;
+			grid-template-columns: 60%;
+			justify-content: center;
+		}
 
+		&__action {
+			display: flex;
+			justify-content: center;
+		}
+	}
 </style>
