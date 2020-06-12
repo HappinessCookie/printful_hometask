@@ -104,5 +104,9 @@
 		justify-content: space-around;
 		justify-items: center;
 		grid-gap: 20px;
+
+		@media (max-width: 800px) {
+			grid-template-columns: minmax(max-content, 80%);
+		}
 	}
 </style>
