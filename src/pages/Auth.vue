@@ -1,6 +1,6 @@
 <template>
-	<div>
-		<h1>Technical task</h1>
+	<div class="auth">
+		<h1 class="mb-4">Technical task</h1>
 		<v-form ref="form">
 			<v-text-field
 				v-model="name"
@@ -19,7 +19,9 @@
 				:items="testsList"
 				:rules="[v => !!v || 'Quiz is required']"
 			></v-select>
-			<v-btn class="mr-4" @click="submit">Start</v-btn>
+			<div class="auth__action">
+				<v-btn class="mr-4" @click="submit">Start</v-btn>
+			</div>
 		</v-form>
 	</div>
 </template>
@@ -78,6 +80,15 @@
   };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+	.auth {
+		display: grid;
+		justify-content: center;
+		justify-items: center;
 
+		&__action {
+			display: flex;
+			justify-content: center;
+		}
+	}
 </style>
